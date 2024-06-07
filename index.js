@@ -76,7 +76,7 @@ module.exports = {
 
   downloadTranslationFile: function(locale, options, callback) {
     var translationPath = path + '/projects/' + options.project_id + '/locales/' + locale.id + '/download?access_token=' + options.access_token + '&file_format=' + options.file_format;
-    var additionalOptions = ["tag", "include_empty_translations", "keep_notranslate_tags", "convert_emoji", /*"format_options",*/ "encoding", "skip_unverified_translations", "fallback_locale_id"];
+    var additionalOptions = ["use_last_reviewed_version","tag","include_empty_translations", "keep_notranslate_tags", "convert_emoji", /*"format_options",*/ "encoding", "skip_unverified_translations", "fallback_locale_id"];
     _.each(additionalOptions, function (optionName) {
       if(options[optionName] != undefined) {
         translationPath += '&'+optionName+'='+options[optionName];
